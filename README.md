@@ -28,7 +28,7 @@ netlify.toml
   environment = {NODE_VERSION = "14.20.0",CONTENTFUL_ACESSTOKEN = "",CONTENTFUL_SPACEID = "",}
 ```
 
-deploy
+##  Deploy
 
 ```
 netlify deploy --prod
