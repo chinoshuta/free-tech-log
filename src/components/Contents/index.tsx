@@ -13,9 +13,6 @@ const Wrapper = styled.div`
   &: hover {
     border: 1px solid #254678;
   }
-  @media screen and (max-width: 420px) {
-    border-bottom: 1px solid #254678;
-  }
 `;
 
 const Title = styled.h1`

@@ -6,7 +6,6 @@ import SideMenu from "../../components/SideMenu";
 import { Helmet } from "react-helmet";
 
 const BodyWrapper = styled.div`
-  background-color: #f8fbfb;
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -31,7 +30,8 @@ const ContentsWrapper = styled.div`
   width: 660px;
   background-color: white;
   @media screen and (max-width: 420px) {
-    width: 100%;
+    width: 85%;
+    margin: 30px auto 0;
   }
 `;
 

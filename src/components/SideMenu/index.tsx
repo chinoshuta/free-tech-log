@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   padding: 40px;
   background-color: white;
   @media screen and (max-width: 420px) {
+    width: 85%;
     margin: 30px auto;
   }
 `;
@@ -105,7 +106,7 @@ const SideMenu: React.FC = () => {
           <Category to={`/category/${n.slug}`}>
             <>
               {n.category}
-              {`(${getCategoryLength(n.slug)})`}
+              {`(${getCategoryLength(n.slug!)})`}
             </>
           </Category>
         ))}

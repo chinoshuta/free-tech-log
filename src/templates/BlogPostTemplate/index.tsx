@@ -16,11 +16,12 @@ const Title = styled.h1`
   font-weight: 500;
   line-height: 1.2em;
   text-transform: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #254678;
 `;
 
 const Text = styled.p`
   font-size: 14px;
-  color: #3e3e3e;
   line-height: 1.8em;
   & p {
     white-space: pre-wrap;

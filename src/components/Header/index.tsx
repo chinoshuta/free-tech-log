@@ -46,7 +46,9 @@ const Header: React.FC = () => {
           <Title>free 技術log</Title>
         </Link>
         <HeaderMenu>
-          {/* <li>このブログについて</li> */}
+          <Link to="/about">
+            <li>このブログについて</li>
+          </Link>
           {/* <li>お問い合せ</li> */}
         </HeaderMenu>
       </HeaderWrapper>
