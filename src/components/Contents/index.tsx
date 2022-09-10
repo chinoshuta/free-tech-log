@@ -20,6 +20,8 @@ const Title = styled.h1`
   font-weight: 500;
   line-height: 1.2em;
   text-transform: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #254678;
 `;
 
 const Note = styled.div`

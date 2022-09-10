@@ -2,9 +2,11 @@ import * as React from "react";
 import Header from "../../components/Header";
 import styled from "styled-components";
 import "modern-css-reset";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "@fontsource/noto-sans-jp";
+import "@fontsource/lato";
 import SideMenu from "../../components/SideMenu";
 import { Helmet } from "react-helmet";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
 const BodyWrapper = styled.div`
