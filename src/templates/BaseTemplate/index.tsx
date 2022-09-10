@@ -4,6 +4,8 @@ import styled from "styled-components";
 import "modern-css-reset";
 import SideMenu from "../../components/SideMenu";
 import { Helmet } from "react-helmet";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 const BodyWrapper = styled.div`
   display: flex;
@@ -36,6 +38,8 @@ const ContentsWrapper = styled.div`
 `;
 
 type Props = { children: any };
+
+config.autoAddCss = false;
 
 const Base: React.FC<Props> = ({ children }) => {
   return (
