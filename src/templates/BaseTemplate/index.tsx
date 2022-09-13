@@ -5,7 +5,7 @@ import "modern-css-reset";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@fontsource/noto-sans-jp/500.css";
 import "@fontsource/noto-sans-jp/700.css";
-import "@fontsource/lato/500.css";
+import "@fontsource/lato";
 import SideMenu from "../../components/SideMenu";
 import { Helmet } from "react-helmet";
 import { config } from "@fortawesome/fontawesome-svg-core";
