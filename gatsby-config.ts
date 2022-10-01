@@ -35,7 +35,6 @@ const config: GatsbyConfig = {
         gfm: true,
       },
     },
-    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-typegen",
     "gatsby-plugin-sass",

@@ -20,7 +20,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.23.1",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-image": "^2.18.1",
@@ -28,7 +27,6 @@
     "gatsby-plugin-react-helmet": "^5.22.0",
     "gatsby-plugin-sass": "^5.22.0",
     "gatsby-plugin-sharp": "^4.18.1",
-    "gatsby-plugin-styled-components": "^5.18.0",
     "gatsby-plugin-typegen": "^3.0.0",
     "gatsby-remark-prismjs": "^6.23.0",
     "gatsby-source-contentful": "^7.20.0",
@@ -38,15 +36,13 @@
     "node-sass": "^7.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.5"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-helmet": "^6.1.5",
-    "@types/styled-components": "^5.1.26",
     "typescript": "^4.7.4"
   }
 }

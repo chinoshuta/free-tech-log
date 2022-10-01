@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import { OutboundLink } from "gatsby-plugin-gtag";

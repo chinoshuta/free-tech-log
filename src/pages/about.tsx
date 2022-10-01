@@ -1,33 +1,13 @@
 import * as React from "react";
-import styled from "styled-components";
 import BaseTemplate from "../templates/BaseTemplate";
-
-const Wrapper = styled.div`
-  width: 100%;
-  padding: 40px;
-`;
-
-const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.2em;
-  text-transform: none;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #254678;
-`;
-
-const Text = styled.p`
-  font-size: 14px;
-  line-height: 1.8em;
-  margin: 12px 0 40px;
-`;
+import * as styles from "./about.module.scss";
 
 const AboutPage: React.FC = () => {
   return (
     <BaseTemplate>
-      <Wrapper>
-        <Title>このブログについて</Title>
-        <Text>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>このブログについて</h1>
+        <p className={styles.text}>
           当ブログはフリーランスエンジニアの筆者が運営するブログです。
           <br />
           フリーランスとして活動していく中での出来事や、技術情報について主に投稿していきます。
@@ -36,9 +16,9 @@ const AboutPage: React.FC = () => {
           <a href="mailto:free.tech.frontend@gmail.com">
             free.tech.frontend@gmail.com
           </a>
-        </Text>
-        <Title>筆者について</Title>
-        <Text>
+        </p>
+        <h1 className={styles.title}>筆者について</h1>
+        <p className={styles.text}>
           関東在住の30代男性です。
           <br />
           情報系の学部を卒業後、新卒でIT企業に入社し、これまで開発をメインに仕事を続けてきました。
@@ -58,8 +38,8 @@ const AboutPage: React.FC = () => {
           今後もReact用いたフロントエンド開発をメインに行なっていきたく、
           <br />
           またGoを用いたバックエンド開発もできるようになりたいと思い勉強中です。
-        </Text>
-      </Wrapper>
+        </p>
+      </div>
     </BaseTemplate>
   );
 };
