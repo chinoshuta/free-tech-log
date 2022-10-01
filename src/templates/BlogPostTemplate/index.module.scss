@@ -1,0 +1,38 @@
+.wrapper {
+  width: 100%;
+  padding: 40px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2em;
+  text-transform: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #254678;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.8em;
+  & p {
+    white-space: pre-wrap;
+  }
+  & blockquote {
+    padding: 0 1em;
+    border-left: 0.25em solid #d0d7de;
+    line-height: 1.4em;
+  }
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 14px 0;
+  color: #3e3e3e;
+}
+
+.icon {
+  margin-right: 6px;
+}

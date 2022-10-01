@@ -1,0 +1,41 @@
+.wrapper {
+  width: 100%;
+  padding: 40px;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: 0.1s;
+  &:hover {
+    border: 1px solid #254678;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2em;
+  text-transform: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #254678;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 14px 0;
+  color: #3e3e3e;
+}
+
+.text {
+  font-size: 14px;
+  color: #3e3e3e;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.icon {
+  margin-right: 6px;
+}

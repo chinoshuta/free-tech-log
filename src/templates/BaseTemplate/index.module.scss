@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px;
+  align-items: flex-start;
+  min-height: calc(100vh - 69px - 37px);
+  @media screen and (max-width: 420px) {
+    display: block;
+    padding: 0;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: #254678;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px;
+  color: white;
+}
+
+.contentsWrapper {
+  width: 660px;
+  background-color: white;
+  @media screen and (max-width: 420px) {
+    width: 85%;
+    margin: 30px auto 0;
+  }
+}

@@ -3,12 +3,12 @@ import Header from "../../components/Header";
 import styled from "styled-components";
 import "modern-css-reset";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import "@fontsource/noto-sans-jp/500.css";
-import "@fontsource/noto-sans-jp/700.css";
+import "@fontsource/noto-sans-jp/300.css";
 import "@fontsource/lato";
 import SideMenu from "../../components/SideMenu";
 import { Helmet } from "react-helmet";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import * as styles from "./index.module.scss";
 
 const BodyWrapper = styled.div`
   display: flex;
@@ -55,11 +55,11 @@ const Base: React.FC<Props> = ({ children }) => {
         />
       </Helmet>
       <Header />
-      <BodyWrapper>
-        <ContentsWrapper>{children}</ContentsWrapper>
+      <div className={styles.wrapper}>
+        <div className={styles.contentsWrapper}>{children}</div>
         <SideMenu />
-      </BodyWrapper>
-      <Footer>©free 技術log all rights reserved.</Footer>
+      </div>
+      <footer className="footer">©free 技術log all rights reserved.</footer>
     </>
   );
 };

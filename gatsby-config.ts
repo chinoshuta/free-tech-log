@@ -14,6 +14,14 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `G-ZSKJJY9R8M`,
+        head: true,
+        anonymize: true,
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: process.env.CONTENTFUL_ACESSTOKEN,
@@ -32,6 +40,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-typegen",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-netlify",
   ],
 };
 

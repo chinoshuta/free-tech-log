@@ -1,0 +1,54 @@
+.wrapper {
+  width: 320px;
+  height: auto;
+  padding: 40px;
+  background-color: white;
+  @media screen and (max-width: 420px) {
+    width: 85%;
+    margin: 30px auto;
+  }
+}
+
+.title {
+  font-size: 18px;
+  border-left: 4px solid #254678;
+  padding-left: 8px;
+}
+
+.contents {
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+.name {
+  font-size: 16px;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.profileImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  margin: 0 auto;
+}
+
+.iconWrapper {
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  img {
+    width: 20px;
+  }
+}
+
+.categoryWrapper {
+  margin: 12px 0;
+}
+
+.category {
+  display: block;
+  font-size: 14px;
+  line-height: 2em;
+}

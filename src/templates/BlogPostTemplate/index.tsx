@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
+import * as styles from "./index.module.scss";
 
 import BaseTemplate from "../BaseTemplate";
 
@@ -67,27 +68,27 @@ const BlogPostTemplate: React.FC<PageProps<GatsbyTypes.BlogPostQuery>> = ({
 }) => {
   return (
     <BaseTemplate>
-      <Wrapper>
-        <Title>{data.contentfulBlogPost?.title}</Title>
-        <Note>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>{data.contentfulBlogPost?.title}</h1>
+        <div className={styles.note}>
           <div>
-            <Icon icon={faFolderOpen} />
+            <FontAwesomeIcon className={styles.icon} icon={faFolderOpen} />
             {data.contentfulBlogPost?.category?.map((n, i) => {
               return i > 0 ? `,${n?.category}` : n?.category;
             })}
           </div>
           <div>
-            <Icon icon={faClock} />
+            <FontAwesomeIcon className={styles.icon} icon={faClock} />
             {data.contentfulBlogPost?.publishDate}
           </div>
-        </Note>
+        </div>
         <Text
           dangerouslySetInnerHTML={{
             __html:
               data.contentfulBlogPost?.content?.childMarkdownRemark?.html ?? "",
           }}
         />
-      </Wrapper>
+      </div>
     </BaseTemplate>
   );
 };

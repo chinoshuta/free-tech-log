@@ -1,7 +1,7 @@
 const path = require("path");
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
   const result = await graphql(
     `
       query {
@@ -57,5 +57,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         slug: n.slug,
       },
     });
+  });
+
+  createRedirect({
+    fromPath: "http://monumental-eclair-8a33ec.netlify.app/*",
+    toPath: "https://free-tech.biz/:splat",
+    isPermanent: true,
+    force: true,
+  });
+  createRedirect({
+    fromPath: "https://monumental-eclair-8a33ec.netlify.app/*",
+    toPath: "https://free-tech.biz/:splat",
+    isPermanent: true,
+    force: true,
   });
 };

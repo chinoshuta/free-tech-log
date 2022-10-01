@@ -1,58 +1,7 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
-import * as React from "react";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  width: 320px;
-  height: auto;
-  padding: 40px;
-  background-color: white;
-  @media screen and (max-width: 420px) {
-    width: 85%;
-    margin: 30px auto;
-  }
-`;
-
-const Title = styled.p`
-  font-size: 18px;
-  border-left: 4px solid #254678;
-  padding-left: 8px;
-`;
-
-const Contents = styled.div`
-  font-size: 13px;
-  padding: 12px 0;
-`;
-
-const Name = styled.p`
-  font-size: 16px;
-  text-align: center;
-  margin: 12px 0;
-`;
-
-const ProfileImg = styled.img.attrs({ src: "/images/profile.jpg" })`
-  width: 80px;
-  height: 80px;
-  border-radius: 100px;
-  margin: 0 auto;
-`;
-const IconWrapper = styled.div`
-  margin: 12px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  img {
-    width: 20px;
-  }
-`;
-const CategoryWrap = styled.div`
-  margin: 12px 0;
-`;
-const Category = styled(Link)`
-  display: block;
-  font-size: 14px;
-  line-height: 2em;
-`;
+import { graphql, useStaticQuery } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-gtag";
+import React from "react";
+import * as styles from "./index.module.scss";
 
 const SideMenu: React.FC = () => {
   const {
@@ -85,33 +34,36 @@ const SideMenu: React.FC = () => {
   };
 
   return (
-    <Wrapper>
-      <Title>プロフィール</Title>
-      <Contents>
-        <ProfileImg />
-        <Name>shuta</Name>
+    <div className={styles.wrapper}>
+      <p className={styles.title}>プロフィール</p>
+      <div className={styles.contents}>
+        <img src="/images/profile.jpg" className={styles.profileImg} />
+        <p className={styles.name}>shuta</p>
         <p>フリーランスのフロントエンドエンジニア</p>
         <p>
           React、React系のフレームワークを用いた開発をメインに行なっています
         </p>
-        <IconWrapper>
-          <a href="https://github.com/chinoshuta" target="_blank">
+        <div className={styles.iconWrapper}>
+          <OutboundLink href="https://github.com/chinoshuta" target="_blank">
             <img src="/images/github-icon.png" />
-          </a>
-        </IconWrapper>
-      </Contents>
-      <Title>カテゴリ</Title>
-      <CategoryWrap>
+          </OutboundLink>
+        </div>
+      </div>
+      <p className={styles.title}>カテゴリ</p>
+      <div className={styles.categoryWrapper}>
         {allContentfulCategory?.nodes.map((n) => (
-          <Category to={`/category/${n.slug}`}>
+          <OutboundLink
+            className={styles.category}
+            href={`/category/${n.slug}`}
+          >
             <>
               {n.category}
               {`(${getCategoryLength(n.slug!)})`}
             </>
-          </Category>
+          </OutboundLink>
         ))}
-      </CategoryWrap>
-    </Wrapper>
+      </div>
+    </div>
   );
 };
 
