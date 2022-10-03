@@ -19,13 +19,13 @@ const Contents: React.FC<Props> = ({ id, title, date, content, category }) => {
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.note}>
           <div>
-            <FontAwesomeIcon className="icon" icon={faFolderOpen} />
+            <FontAwesomeIcon className={styles.icon} icon={faFolderOpen} />
             {category.map((n, i) => {
               return i > 0 ? `,${n?.category}` : n?.category;
             })}
           </div>
           <div>
-            <FontAwesomeIcon className="icon" icon={faClock} />
+            <FontAwesomeIcon className={styles.icon} icon={faClock} />
             {date}
           </div>
         </div>
