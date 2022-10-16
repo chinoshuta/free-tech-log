@@ -23,21 +23,39 @@ const AboutPage: React.FC = () => {
           <br />
           情報系の学部を卒業後、新卒でIT企業に入社し、これまで開発をメインに仕事を続けてきました。
           <br />
-          以下がおおまかな経歴です。
+          Java、C#を用いた業務系システムの開発からReactを用いたフロントエンド開発まで経験しておりますが、
+          <br />
+          実際にユーザーの目に触れる部分をつくる手応えや、Reactを用いた開発体験の面白さから、今後はReactを用いたフロントエンド開発をメインに行なっていきたいと思っております。
+        </p>
+        <h1 className={styles.title}>経歴</h1>
+        <p className={styles.text}>
           <ul>
             <li>
-              SIerのパートナー企業で主にJava・C#を用いた公共系システムの開発に３年半ほど携わる
+              SIerのパートナー企業で主にJava・C#を用いた公共系システムの開発に約３年半
             </li>
             <li>
-              受託開発企業でWebアプリ、スマートフォンアプリの開発に1年ほど携わる
+              受託開発ベンチャー企業でWebアプリ、スマートフォンアプリの開発に約1年
             </li>
             <li>
               フリーランスエンジニアとしてReactを用いた案件に業務委託で参画（現在）
             </li>
           </ul>
-          今後もReact用いたフロントエンド開発をメインに行なっていきたく、
-          <br />
-          またGoを用いたバックエンド開発もできるようになりたいと思い勉強中です。
+        </p>
+        <h1 className={styles.title}>経験技術</h1>
+        <p className={styles.text}>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>SQL</li>
+            <li>ReactNative</li>
+            <li>PHP</li>
+            <li>Java</li>
+            <li>C#</li>
+          </ul>
         </p>
       </div>
     </BaseTemplate>

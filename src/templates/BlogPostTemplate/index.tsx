@@ -3,8 +3,8 @@ import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import * as styles from "./index.module.scss";
-
 import BaseTemplate from "../BaseTemplate";
+import "prismjs/themes/prism.css";
 
 export const query = graphql`
   query BlogPost($id: String!) {

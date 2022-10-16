@@ -33,6 +33,7 @@ const config: GatsbyConfig = {
       options: {
         footnotes: true,
         gfm: true,
+        plugins: [`gatsby-remark-prismjs`],
       },
     },
     "gatsby-plugin-image",
