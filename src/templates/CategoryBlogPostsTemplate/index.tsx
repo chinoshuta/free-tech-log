@@ -1,4 +1,5 @@
 import { graphql, PageProps } from "gatsby";
+import { DateTime } from "luxon";
 import * as React from "react";
 import Contents from "../../components/Contents";
 import BaseTemplate from "../BaseTemplate";
@@ -11,7 +12,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          publishDate(formatString: "YYYY年MM月DD日")
+          publishDate
           title
           id
           category {
@@ -36,7 +37,9 @@ const BlogPostTemplate: React.FC<
       {data.allContentfulBlogPost.edges.map((n) => (
         <Contents
           title={n.node.title ?? ""}
-          date={n.node.publishDate ?? ""}
+          date={DateTime.fromJSDate(
+            new Date(n.node.publishDate || "")
+          ).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}
           content={n.node.content?.childMarkdownRemark?.excerpt ?? ""}
           id={n.node.id ?? ""}
           category={n.node.category ?? []}

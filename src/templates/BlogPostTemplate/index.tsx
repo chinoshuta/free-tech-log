@@ -5,6 +5,7 @@ import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import * as styles from "./index.module.scss";
 import BaseTemplate from "../BaseTemplate";
 import "prismjs/themes/prism.css";
+import { DateTime } from "luxon";
 
 export const query = graphql`
   query BlogPost($id: String!) {
@@ -13,7 +14,7 @@ export const query = graphql`
       category {
         category
       }
-      publishDate(formatString: "YYYY年MM月DD日")
+      publishDate
       content {
         childMarkdownRemark {
           html
@@ -39,7 +40,9 @@ const BlogPostTemplate: React.FC<PageProps<GatsbyTypes.BlogPostQuery>> = ({
           </div>
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faClock} />
-            {data.contentfulBlogPost?.publishDate}
+            {DateTime.fromJSDate(
+              new Date(data.contentfulBlogPost?.publishDate || "")
+            ).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}
           </div>
         </div>
         <p
