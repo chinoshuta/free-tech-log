@@ -40,7 +40,6 @@ const config: GatsbyConfig = {
     "gatsby-plugin-typegen",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-netlify",
   ],
 };
 
