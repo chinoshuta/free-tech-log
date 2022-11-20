@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       query {
         allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
+          totalCount
           edges {
             node {
               id
@@ -19,13 +20,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
-  const { edges } = result.data.allContentfulBlogPost;
+  const { edges, totalCount } = result.data.allContentfulBlogPost;
   edges?.forEach((n) => {
     createPage({
       path: `/post/${n.node.id}`,
       component: path.resolve("./src/templates/BlogPostTemplate/index.tsx"),
       context: {
         id: n.node.id,
+      },
+    });
+  });
+
+  [...Array(Math.ceil(Number(totalCount) / 2))].forEach((_, i) => {
+    createPage({
+      path: `/${i + 1}`,
+      component: path.resolve("./src/templates/PageTemplate/index.tsx"),
+      context: {
+        skip: i * 2 - 1,
       },
     });
   });
