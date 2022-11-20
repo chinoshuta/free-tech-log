@@ -51,6 +51,7 @@ const AboutPage: React.FC = () => {
             <li>TypeScript</li>
             <li>React</li>
             <li>Next.js</li>
+            <li>Go</li>
             <li>SQL</li>
             <li>ReactNative</li>
             <li>PHP</li>
