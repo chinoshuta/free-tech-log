@@ -1,5 +1,7 @@
+@import "./const";
+
 body {
-  background-color: #f1f4fb;
+  background-color: $color-secondary;
   font-family: "Lato", "Noto Sans JP", sans-serif;
 }
 ul {

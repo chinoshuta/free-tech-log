@@ -6,7 +6,7 @@ const AboutPage: React.FC = () => {
   return (
     <BaseTemplate>
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>このブログについて</h1>
+        <h1 className={styles.title}>当ブログについて</h1>
         <p className={styles.text}>
           当ブログはフリーランスエンジニアの筆者が運営するブログです。
           <br />

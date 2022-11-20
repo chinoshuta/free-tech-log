@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         </Link>
         <div className={styles.menu}>
           <OutboundLink href="/about">
-            <li>このブログについて</li>
+            <li>当ブログについて</li>
           </OutboundLink>
           {/* <li>お問い合せ</li> */}
         </div>
