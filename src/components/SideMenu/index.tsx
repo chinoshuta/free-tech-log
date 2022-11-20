@@ -55,6 +55,7 @@ const SideMenu: React.FC = () => {
           <OutboundLink
             className={styles.category}
             href={`/category/${n.slug}`}
+            key={n.slug}
           >
             <>
               {n.category}

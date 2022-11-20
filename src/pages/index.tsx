@@ -34,7 +34,7 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.BlogListQuery>> = ({
   return (
     <BaseTemplate>
       <div className={styles.wrapper}>
-        {data.allContentfulBlogPost.edges.map((n) => (
+        {data.allContentfulBlogPost.edges.map((n, i) => (
           <Contents
             title={n.node.title ?? ""}
             date={DateTime.fromJSDate(
@@ -43,6 +43,7 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.BlogListQuery>> = ({
             content={n.node.content?.childMarkdownRemark?.excerpt ?? ""}
             id={n.node.id ?? ""}
             category={n.node.category ?? []}
+            key={n.node.id ?? i}
           />
         ))}
       </div>

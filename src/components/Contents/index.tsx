@@ -25,11 +25,7 @@ const Contents: React.FC<Props> = ({ id, title, date, content, category }) => {
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faFolderOpen} />
             {category.map((n, i) => {
-              return (
-                <Link to={`/category/${n?.slug}`} className={styles.category}>
-                  {n?.category}
-                </Link>
-              );
+              return n?.category;
             })}
           </div>
           <div>
