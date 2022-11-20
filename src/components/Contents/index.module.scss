@@ -4,6 +4,9 @@
   cursor: pointer;
   border: 1px solid white;
   transition: 0.1s;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  border-radius: 8px;
   &:hover {
     border: 1px solid #254678;
   }
@@ -37,5 +40,10 @@
 }
 
 .icon {
+  margin-right: 6px;
+  width: 14px;
+}
+
+.category {
   margin-right: 6px;
 }

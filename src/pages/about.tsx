@@ -13,6 +13,7 @@ const AboutPage: React.FC = () => {
           フリーランスとして活動していく中での出来事や、技術情報について主に投稿していきます。
           <br />
           記事やお仕事について何かありましたら以下までお問い合せください。
+          <br />
           <a href="mailto:free.tech.frontend@gmail.com">
             free.tech.frontend@gmail.com
           </a>

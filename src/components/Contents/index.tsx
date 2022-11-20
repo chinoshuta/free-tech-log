@@ -3,13 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import { OutboundLink } from "gatsby-plugin-gtag";
 import * as styles from "./index.module.scss";
+import { Link } from "gatsby";
 
 type Props = {
   id: string;
   title: string;
   date: string;
   content: string;
-  category: readonly ({ category: string | null } | null)[];
+  category: readonly ({
+    category: string | null;
+    slug: string | null;
+  } | null)[];
 };
 
 const Contents: React.FC<Props> = ({ id, title, date, content, category }) => {
@@ -21,7 +25,11 @@ const Contents: React.FC<Props> = ({ id, title, date, content, category }) => {
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faFolderOpen} />
             {category.map((n, i) => {
-              return i > 0 ? `,${n?.category}` : n?.category;
+              return (
+                <Link to={`/category/${n?.slug}`} className={styles.category}>
+                  {n?.category}
+                </Link>
+              );
             })}
           </div>
           <div>

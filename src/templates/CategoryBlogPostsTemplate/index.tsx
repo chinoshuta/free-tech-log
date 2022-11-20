@@ -3,6 +3,7 @@ import { DateTime } from "luxon";
 import * as React from "react";
 import Contents from "../../components/Contents";
 import BaseTemplate from "../BaseTemplate";
+import * as styles from "./index.module.scss";
 
 export const query = graphql`
   query CategoryBlogPost($slug: String!) {
@@ -17,6 +18,7 @@ export const query = graphql`
           id
           category {
             category
+            slug
           }
           content {
             childMarkdownRemark {
@@ -34,17 +36,19 @@ const BlogPostTemplate: React.FC<
 > = ({ data }) => {
   return (
     <BaseTemplate>
-      {data.allContentfulBlogPost.edges.map((n) => (
-        <Contents
-          title={n.node.title ?? ""}
-          date={DateTime.fromJSDate(
-            new Date(n.node.publishDate || "")
-          ).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}
-          content={n.node.content?.childMarkdownRemark?.excerpt ?? ""}
-          id={n.node.id ?? ""}
-          category={n.node.category ?? []}
-        />
-      ))}
+      <div className={styles.wrapper}>
+        {data.allContentfulBlogPost.edges.map((n) => (
+          <Contents
+            title={n.node.title ?? ""}
+            date={DateTime.fromJSDate(
+              new Date(n.node.publishDate || "")
+            ).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}
+            content={n.node.content?.childMarkdownRemark?.excerpt ?? ""}
+            id={n.node.id ?? ""}
+            category={n.node.category ?? []}
+          />
+        ))}
+      </div>
     </BaseTemplate>
   );
 };

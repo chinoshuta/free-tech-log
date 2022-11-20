@@ -1,4 +1,4 @@
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
@@ -13,6 +13,7 @@ export const query = graphql`
       title
       category {
         category
+        slug
       }
       publishDate
       content {
@@ -35,7 +36,11 @@ const BlogPostTemplate: React.FC<PageProps<GatsbyTypes.BlogPostQuery>> = ({
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faFolderOpen} />
             {data.contentfulBlogPost?.category?.map((n, i) => {
-              return i > 0 ? `,${n?.category}` : n?.category;
+              return (
+                <Link to={`/category/${n?.slug}`} className={styles.category}>
+                  {n?.category}
+                </Link>
+              );
             })}
           </div>
           <div>

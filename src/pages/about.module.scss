@@ -1,6 +1,10 @@
 .wrapper {
   width: 100%;
   padding: 40px 40px 0;
+
+  & a {
+    text-decoration: underline;
+  }
 }
 
 .title {

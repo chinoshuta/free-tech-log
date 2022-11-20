@@ -1,6 +1,9 @@
 .wrapper {
   width: 100%;
   padding: 40px;
+  & a {
+    text-decoration: underline;
+  }
 }
 
 .title {
@@ -16,10 +19,9 @@
   font-size: 14px;
   line-height: 2em;
   & h2 {
-    margin-bottom: 8px;
-  }
-  & a {
+    margin-bottom: 2px;
     text-decoration: underline;
+    font-size: 19px;
   }
   & blockquote {
     padding: 0 1em;
@@ -37,5 +39,10 @@
 }
 
 .icon {
+  margin-right: 6px;
+  width: 13px;
+}
+
+.category {
   margin-right: 6px;
 }
