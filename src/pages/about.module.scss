@@ -4,6 +4,10 @@
   width: 100%;
   padding: 40px 40px 0;
 
+  @media screen and (max-width: 420px) {
+    padding: 25px 25px 0;
+  }
+
   & a {
     text-decoration: underline;
   }
