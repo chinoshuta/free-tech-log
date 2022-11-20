@@ -3,12 +3,9 @@ import { OutboundLink } from "gatsby-plugin-gtag";
 import React from "react";
 import * as styles from "./index.module.scss";
 
-type Props = {
-  hidden: boolean;
-};
-const Header: React.FC<Props> = ({ hidden }) => {
+const Header: React.FC = () => {
   return (
-    <header className={!hidden && styles.root}>
+    <header className={styles.root}>
       <div className={styles.wrapper}>
         <Link to="/">
           <h1 className={styles.title}>free 技術log</h1>
