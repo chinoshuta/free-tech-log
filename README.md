@@ -34,5 +34,4 @@ netlify.toml
 netlify deploy --prod
 ```
 
-Node v14.20.0 でのみ動作確認済み
-（それ以上のバージョンではエラーとなる可能性あり）
+Node v18.0.0 以上
