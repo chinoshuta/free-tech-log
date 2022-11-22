@@ -24,9 +24,10 @@
   font-size: 14px;
   line-height: 2em;
   & h2 {
-    margin-bottom: 2px;
-    text-decoration: underline;
-    font-size: 19px;
+    font-size: 18px;
+    border-left: 4px solid $color-primary;
+    padding-left: 8px;
+    margin: 12px 0 4px;
   }
   & blockquote {
     padding: 0 1em;

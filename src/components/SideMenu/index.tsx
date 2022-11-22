@@ -51,18 +51,21 @@ const SideMenu: React.FC = () => {
       </div>
       <p className={styles.title}>カテゴリ</p>
       <div className={styles.categoryWrapper}>
-        {allContentfulCategory?.nodes.map((n) => (
-          <OutboundLink
-            className={styles.category}
-            href={`/category/${n.slug}`}
-            key={n.slug}
-          >
-            <>
-              {n.category}
-              {`(${getCategoryLength(n.slug!)})`}
-            </>
-          </OutboundLink>
-        ))}
+        {allContentfulCategory?.nodes.map(
+          (n) =>
+            getCategoryLength(n.slug!) > 0 && (
+              <OutboundLink
+                className={styles.category}
+                href={`/category/${n.slug}`}
+                key={n.slug}
+              >
+                <>
+                  {n.category}
+                  {`(${getCategoryLength(n.slug!)})`}
+                </>
+              </OutboundLink>
+            )
+        )}
       </div>
     </div>
   );
