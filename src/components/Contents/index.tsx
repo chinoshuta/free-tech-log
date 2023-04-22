@@ -25,7 +25,7 @@ const Contents: React.FC<Props> = ({ id, title, date, content, category }) => {
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faFolderOpen} />
             {category.map((n, i) => {
-              return n?.category;
+              return i > 0 ? `,${n?.category}` : n?.category;
             })}
           </div>
           <div>
