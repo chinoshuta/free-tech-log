@@ -9,7 +9,8 @@
   min-height: calc(100vh - 69px - 37px);
 
   @media screen and (max-width: 768px) {
-    display: block;
+    flex-direction: column;
+    gap: 40px;
     padding: 0;
   }
 }
