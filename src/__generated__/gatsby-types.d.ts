@@ -3635,7 +3635,7 @@ type contentfulBlogPostContentTextNodeSysSortInput = {
 type BlogListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogListQuery = { readonly allContentfulBlogPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly publishDate: string | null, readonly title: string | null, readonly id: string, readonly category: ReadonlyArray<{ readonly category: string | null, readonly slug: string | null } | null> | null, readonly content: { readonly childMarkdownRemark: { readonly excerpt: string | null } | null } | null } }> } };
+type BlogListQuery = { readonly allContentfulBlogPost: { readonly totalCount: number, readonly edges: ReadonlyArray<{ readonly node: { readonly publishDate: string | null, readonly title: string | null, readonly id: string, readonly category: ReadonlyArray<{ readonly category: string | null, readonly slug: string | null } | null> | null, readonly content: { readonly childMarkdownRemark: { readonly excerpt: string | null } | null } | null } }> } };
 
 type BlogPostQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3655,6 +3655,14 @@ type CategoryListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type CategoryListQuery = { readonly allContentfulCategory: { readonly nodes: ReadonlyArray<{ readonly category: string | null, readonly slug: string | null }> }, readonly allContentfulBlogPost: { readonly nodes: ReadonlyArray<{ readonly category: ReadonlyArray<{ readonly slug: string | null } | null> | null }> } };
+
+type PageBlogListQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type PageBlogListQuery = { readonly allContentfulBlogPost: { readonly totalCount: number, readonly edges: ReadonlyArray<{ readonly node: { readonly publishDate: string | null, readonly title: string | null, readonly id: string, readonly category: ReadonlyArray<{ readonly category: string | null, readonly slug: string | null } | null> | null, readonly content: { readonly childMarkdownRemark: { readonly excerpt: string | null } | null } | null } }> } };
 
 
 }

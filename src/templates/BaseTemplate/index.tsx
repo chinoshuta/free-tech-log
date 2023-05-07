@@ -20,7 +20,7 @@ const Base: React.FC<Props> = ({ children }) => {
         <title>free技術log</title>
         <meta
           name="description"
-          content="フリーランスフロントエンドエンジニアのブログです。主に技術情報について投稿しています。"
+          content="フリーランスエンジニアのブログです。主に技術情報について投稿しています。"
         />
       </Helmet>
       <Header />
