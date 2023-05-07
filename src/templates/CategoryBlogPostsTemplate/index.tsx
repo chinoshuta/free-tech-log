@@ -2,15 +2,19 @@ import { graphql, PageProps } from "gatsby";
 import { DateTime } from "luxon";
 import * as React from "react";
 import Contents from "../../components/Contents";
+import PageNation from "../../components/PageNation";
 import BaseTemplate from "../BaseTemplate";
 import * as styles from "./index.module.scss";
 
 export const query = graphql`
-  query CategoryBlogPost($slug: String!) {
+  query CategoryBlogPost($slug: String!, $skip: Int!, $limit: Int!) {
     allContentfulBlogPost(
       sort: { fields: publishDate, order: DESC }
       filter: { category: { elemMatch: { slug: { eq: $slug } } } }
+      limit: $limit
+      skip: $skip
     ) {
+      totalCount
       edges {
         node {
           publishDate
@@ -33,7 +37,8 @@ export const query = graphql`
 
 const BlogPostTemplate: React.FC<
   PageProps<GatsbyTypes.CategoryBlogPostQuery>
-> = ({ data }) => {
+> = ({ data, pageContext }) => {
+  const context = pageContext as any;
   return (
     <BaseTemplate>
       <div className={styles.wrapper}>
@@ -48,6 +53,12 @@ const BlogPostTemplate: React.FC<
             category={n.node.category ?? []}
           />
         ))}
+        <PageNation
+          totalPage={Math.ceil(
+            Number(data.allContentfulBlogPost.totalCount) / 5
+          )}
+          current={+context.page}
+        />
       </div>
     </BaseTemplate>
   );

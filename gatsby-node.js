@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const { nodes } = Categoryresult.data.allContentfulCategory;
-  nodes?.forEach((n) => {
+  nodes?.forEach(async (n) => {
     createPage({
       path: `/category/${n.slug}`,
       component: path.resolve(
@@ -69,8 +69,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ),
       context: {
         slug: n.slug,
+        skip: 0,
+        limit: perPage,
+        page: 1,
       },
     });
+    const CategoryPostResult = await graphql(
+      `
+      query {
+        allContentfulBlogPost(
+          filter: { category: { elemMatch: { slug: { eq: ${n.slug} } } } }
+        ) {
+          totalCount
+        }
+      }
+      `
+    );
+    const categoryPostTotalCount =
+      CategoryPostResult?.data?.allContentfulCategory?.totalCount ?? 0;
+    if (categoryPostTotalCount > perPage) {
+      [...Array(Math.ceil(Number(categoryPostTotalCount) / perPage))].forEach(
+        (_, i) => {
+          createPage({
+            path: `/${n.slug}/${i + 1}`,
+            component: path.resolve(
+              "./src/templates/CategoryBlogPostsTemplate/index.tsx"
+            ),
+            context: {
+              skip: i * perPage,
+              limit: perPage,
+              page: i + 1,
+            },
+          });
+        }
+      );
+    }
   });
 
   createRedirect({

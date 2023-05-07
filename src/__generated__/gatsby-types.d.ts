@@ -3646,10 +3646,12 @@ type BlogPostQuery = { readonly contentfulBlogPost: { readonly title: string | n
 
 type CategoryBlogPostQueryVariables = Exact<{
   slug: Scalars['String'];
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
 }>;
 
 
-type CategoryBlogPostQuery = { readonly allContentfulBlogPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly publishDate: string | null, readonly title: string | null, readonly id: string, readonly category: ReadonlyArray<{ readonly category: string | null, readonly slug: string | null } | null> | null, readonly content: { readonly childMarkdownRemark: { readonly excerpt: string | null } | null } | null } }> } };
+type CategoryBlogPostQuery = { readonly allContentfulBlogPost: { readonly totalCount: number, readonly edges: ReadonlyArray<{ readonly node: { readonly publishDate: string | null, readonly title: string | null, readonly id: string, readonly category: ReadonlyArray<{ readonly category: string | null, readonly slug: string | null } | null> | null, readonly content: { readonly childMarkdownRemark: { readonly excerpt: string | null } | null } | null } }> } };
 
 type CategoryListQueryVariables = Exact<{ [key: string]: never; }>;
 
