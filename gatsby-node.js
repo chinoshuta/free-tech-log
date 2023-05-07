@@ -2,6 +2,7 @@ const path = require("path");
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
+  const perPage = 5;
   const result = await graphql(
     `
       query {
@@ -31,12 +32,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  [...Array(Math.ceil(Number(totalCount) / 2))].forEach((_, i) => {
+  [...Array(Math.ceil(Number(totalCount) / perPage))].forEach((_, i) => {
     createPage({
       path: `/${i + 1}`,
       component: path.resolve("./src/templates/PageTemplate/index.tsx"),
       context: {
-        skip: i * 2 - 1,
+        skip: i * perPage,
+        limit: perPage,
+        page: i + 1,
       },
     });
   });

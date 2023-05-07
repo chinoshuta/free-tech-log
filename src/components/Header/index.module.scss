@@ -4,17 +4,9 @@
   background-color: $color-primary;
   color: white;
   padding: 18px 60px;
-  position: sticky;
-  transition: 0.2s;
-  top: 0;
   @media screen and (max-width: 420px) {
     padding: 18px 20px;
   }
-}
-
-.hidden {
-  height: 0;
-  padding: 0 60px;
 }
 
 .wrapper {

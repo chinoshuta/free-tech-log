@@ -3658,6 +3658,7 @@ type CategoryListQuery = { readonly allContentfulCategory: { readonly nodes: Rea
 
 type PageBlogListQueryVariables = Exact<{
   skip: Scalars['Int'];
+  limit: Scalars['Int'];
 }>;
 
 

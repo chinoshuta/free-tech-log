@@ -1,15 +1,16 @@
 import * as React from "react";
 import BaseTemplate from "../../templates/BaseTemplate";
 import Contents from "../../components/Contents";
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import { DateTime } from "luxon";
 import * as styles from "./index.module.scss";
+import PageNation from "../../components/PageNation";
 
 export const query = graphql`
-  query PageBlogList($skip: Int!) {
+  query PageBlogList($skip: Int!, $limit: Int!) {
     allContentfulBlogPost(
       sort: { fields: publishDate, order: DESC }
-      limit: 2
+      limit: $limit
       skip: $skip
     ) {
       totalCount
@@ -33,7 +34,11 @@ export const query = graphql`
   }
 `;
 
-const IndexPage: React.FC<PageProps<GatsbyTypes.PageBlogList>> = ({ data }) => {
+const IndexPage: React.FC<PageProps<GatsbyTypes.PageBlogList>> = ({
+  data,
+  pageContext,
+}) => {
+  const context = pageContext as any;
   return (
     <BaseTemplate>
       <div className={styles.wrapper}>
@@ -49,13 +54,12 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.PageBlogList>> = ({ data }) => {
             key={n.node.id ?? i}
           />
         ))}
-        <div className={styles.page}>
-          {[...Array(Number(data.allContentfulBlogPost.totalCount) % 3)].map(
-            (_, i) => (
-              <span className={styles.item}>{i + 1}</span>
-            )
+        <PageNation
+          totalPage={Math.ceil(
+            Number(data.allContentfulBlogPost.totalCount) / 5
           )}
-        </div>
+          current={+context.page}
+        />
       </div>
     </BaseTemplate>
   );

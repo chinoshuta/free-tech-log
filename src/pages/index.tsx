@@ -4,6 +4,7 @@ import Contents from "../components/Contents";
 import { graphql, PageProps } from "gatsby";
 import { DateTime } from "luxon";
 import * as styles from "./index.module.scss";
+import PageNation from "../components/PageNation";
 
 export const query = graphql`
   query BlogList {
@@ -50,13 +51,12 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.BlogListQuery>> = ({
             key={n.node.id ?? i}
           />
         ))}
-        <div className={styles.page}>
-          {[...Array(Number(data.allContentfulBlogPost.totalCount) % 3)].map(
-            (_, i) => (
-              <span className={styles.item}>{i + 1}</span>
-            )
+        <PageNation
+          current={1}
+          totalPage={Math.ceil(
+            Number(data.allContentfulBlogPost.totalCount) / 5
           )}
-        </div>
+        />
       </div>
     </BaseTemplate>
   );

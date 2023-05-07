@@ -2,23 +2,4 @@
 
 .wrapper {
   background-color: $color-secondary;
-  padding-bottom: 30px;
-}
-
-.page {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.item {
-  width: 25px;
-  height: 25px;
-  background-color: $color-primary;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 25px;
 }
