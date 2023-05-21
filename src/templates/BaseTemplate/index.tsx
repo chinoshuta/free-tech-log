@@ -19,7 +19,7 @@ const Base: React.FC<Props> = ({ children }) => {
   const [isHeaderHide, seIsHeaderHide] = React.useState<boolean>(false);
 
   useScrollPosition(({ prevPos, currPos }) => {
-    if (currPos.y === 0) {
+    if (currPos.y <= 0) {
       seIsHeaderHide(false);
       return;
     }
@@ -30,6 +30,7 @@ const Base: React.FC<Props> = ({ children }) => {
     }
     seIsHeaderHide(false);
   }, []);
+
   return (
     <>
       <Helmet>
