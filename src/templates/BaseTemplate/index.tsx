@@ -19,7 +19,8 @@ const Base: React.FC<Props> = ({ children }) => {
   const [isHeaderHide, seIsHeaderHide] = React.useState<boolean>(false);
 
   useScrollPosition(({ prevPos, currPos }) => {
-    if (currPos.y <= 0) {
+    console.log(currPos.y);
+    if (currPos.y >= 0) {
       seIsHeaderHide(false);
       return;
     }
