@@ -7,7 +7,6 @@
   padding: 60px;
   align-items: flex-start;
   min-height: calc(100vh - 69px - 37px);
-
   @media screen and (max-width: 768px) {
     flex-direction: column;
     gap: 40px;
@@ -24,6 +23,16 @@
   color: white;
 }
 
+.headerWrap {
+  top: 0;
+  position: sticky;
+  transition: 0.4s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 .contentsWrapper {
   width: 760px;
   border-radius: 8px;
@@ -32,4 +41,13 @@
     width: 85%;
     margin: 30px auto 0;
   }
+}
+
+.button {
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: $color-primary;
+  color: #fff;
+  padding: 6px 12px;
 }
