@@ -1,9 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faFolderOpen } from "@fortawesome/free-regular-svg-icons";
+import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import { OutboundLink } from "gatsby-plugin-gtag";
 import * as styles from "./index.module.scss";
-import { Link } from "gatsby";
 
 type Props = {
   id: string;
@@ -28,10 +27,7 @@ const Contents: React.FC<Props> = ({ id, title, date, content, category }) => {
               return i > 0 ? `,${n?.category}` : n?.category;
             })}
           </div>
-          <div>
-            <FontAwesomeIcon className={styles.icon} icon={faClock} />
-            {date}
-          </div>
+          <div>{date}</div>
         </div>
         <div className={styles.text}>{content}</div>
       </div>

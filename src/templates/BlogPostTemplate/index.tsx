@@ -44,7 +44,6 @@ const BlogPostTemplate: React.FC<PageProps<GatsbyTypes.BlogPostQuery>> = ({
             })}
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faClock} />
             {DateTime.fromJSDate(
               new Date(data.contentfulBlogPost?.publishDate || "")
             ).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}
