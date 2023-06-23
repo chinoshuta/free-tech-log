@@ -1,10 +1,12 @@
 import * as React from "react";
+import PageTitle from "../components/PageTitle";
 import BaseTemplate from "../templates/BaseTemplate";
 import * as styles from "./about.module.scss";
 
 const AboutPage: React.FC = () => {
   return (
     <BaseTemplate>
+      <PageTitle title="当ブログについて" />
       <div className={styles.wrapper}>
         <h1 className={styles.title}>当ブログについて</h1>
         <p className={styles.text}>

@@ -6,6 +6,7 @@ import * as styles from "./index.module.scss";
 import BaseTemplate from "../BaseTemplate";
 import "prismjs/themes/prism.css";
 import { DateTime } from "luxon";
+import PageTitle from "../../components/PageTitle";
 
 export const query = graphql`
   query BlogPost($id: String!) {
@@ -30,6 +31,7 @@ const BlogPostTemplate: React.FC<PageProps<GatsbyTypes.BlogPostQuery>> = ({
 }) => {
   return (
     <BaseTemplate>
+      <PageTitle title={data.contentfulBlogPost?.title!} />
       <div className={styles.wrapper}>
         <h1 className={styles.title}>{data.contentfulBlogPost?.title}</h1>
         <div className={styles.note}>

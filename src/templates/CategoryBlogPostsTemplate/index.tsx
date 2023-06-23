@@ -3,6 +3,7 @@ import { DateTime } from "luxon";
 import * as React from "react";
 import Contents from "../../components/Contents";
 import PageNation from "../../components/PageNation";
+import PageTitle from "../../components/PageTitle";
 import BaseTemplate from "../BaseTemplate";
 import * as styles from "./index.module.scss";
 
@@ -41,6 +42,7 @@ const BlogPostTemplate: React.FC<
   const context = pageContext as any;
   return (
     <BaseTemplate>
+      <PageTitle title={context.slug} />
       <div className={styles.wrapper}>
         {data.allContentfulBlogPost.edges.map((n) => (
           <Contents
