@@ -60,6 +60,7 @@ const AboutPage: React.FC = () => {
             <li>Java</li>
             <li>C#</li>
           </ul>
+          ※詳細な経歴をご希望の方は別途お問い合わせください
         </p>
       </div>
     </BaseTemplate>
